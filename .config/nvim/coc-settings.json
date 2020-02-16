@@ -1,0 +1,44 @@
+{
+    "languageserver": {
+        //"clangd": {
+        //    "command": "clangd",
+        //    "args": ["--background-index"],
+        //    "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+        //    "filetypes": ["c", "cpp", "objc", "objcpp"]
+        //}
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        },
+        "efm": {
+            "command": "efm-langserver",
+            "args": [],
+            // custom config path
+            "args": ["-c", "/home/youche_ubuntu/.config/efm-langserver/config.yaml"],
+            "filetypes": ["vim", "eruby", "markdown", "yaml"]
+        }
+    }, 
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.virtualText": true,
+    "diagnostic.joinMessageLines": false,
+    "diagnostic.messageTarget": "float",
+    "diagnostic.enable": true,
+    "diagnostic.virtualTextLines": 4,
+    "list.insertMappings": {
+        //"<C-f>": "feedkeys:\\<C-f>",
+        //"<C-b>": "feedkeys:\\<C-b>",
+        "<C-n>": "normal:j",
+        "<C-p>": "normal:k",
+        // paste yanked text to prompt
+        "<C-c>": "<C-o>",
+        "<Up>": "prompt:previous",
+        "<Down>": "prompt:next"
+    },
+    "python.jediEnabled": false
+}
